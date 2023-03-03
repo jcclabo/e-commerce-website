@@ -1,0 +1,70 @@
+﻿@model MyApp.Models.ProductModel
+@{
+    ViewData["Title"] = "Admin Product Page";
+}
+
+<hr />
+<form action="">
+    <input type="submit" value="Read"><br><br>
+    <input type="submit" value="Insert"><br><br>
+    <input type="submit" value="Update"><br><br>
+</form>
+<hr />
+<form action="">
+    <input type="submit" value="Read"><br><br>
+    <label for="prodId">Product ID:</label><br>
+    <input type="text" id="prodId" name="prodId" value=""><br>
+    <p> Product name:<p/>
+    <p>Image Url:</p>
+    <p>Cost:</p>
+    <p>Price:</p>
+    <p>Description:</p>
+</form>
+<hr />
+<form action="">
+    <label for="pname">Product name:</label><br>
+    <input type="text" value=""><br>
+    <label for="imgUrl">Image Url:</label><br>
+    <input type="text" value=""><br>
+    <label for="cost">Cost:</label><br>
+    <input type="text" value=""><br>
+    <label for="price">Price:</label><br>
+    <input type="text" value=""><br>
+    <label for="descrip">Description:</label><br>
+    <input type="text" value=""><br><br>
+    <input type="submit" value="Insert">
+    <input type="submit" value="Cancel"><br><br>
+</form>
+<hr />
+<form action="">
+    <label for="pname">Product name:</label><br>
+    <input type="text" value=""><br>
+    <label for="imgUrl">Image Url:</label><br>
+    <input type="text" value=""><br>
+    <label for="cost">Cost:</label><br>
+    <input type="text" value=""><br>
+    <label for="price">Price:</label><br>
+    <input type="text" value=""><br>
+    <label for="descrip">Description:</label><br>
+    <input type="text" value=""><br><br>
+    <input type="submit" value="Update">
+    <input type="submit" value="Cancel"><br><br>
+</form>
+
+@section Scripts {
+    <script>
+        $.ajax([
+            type: "Post",
+            url: @Url.Action("Save"),
+            dataType: "json",
+            data: 
+            success: function(result) {
+                alert("success");
+            },
+            error: function(req, status, error) {
+                alert("error");
+                console.log(status)
+            }
+            ]);
+    </script>
+}

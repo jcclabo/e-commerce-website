@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="px-3 py-2 border-bottom bg-secondary">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap" /></svg>
+                        Logo Here
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="../../" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><image width="24" height="24" href="/pics/home/home.png" /></svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><image width="24" height="24" href="/pics/home/dashboard.png" /></svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><image width="24" height="24" href="/pics/home/orders.png" /></svg>
+                                Orders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><image width="24" height="24" href="/pics/home/products.png" /></svg>
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Product" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><image width="24" height="24" href="/pics/home/admin.png" /></svg>
+                                Admin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="vueAppTemplate" class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <div class="py-2 my-4 bg-secondary">
+        <div class="container">
+            <footer class="py-3 my-4 text-white">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Dashboard</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Orders</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Products</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Admin</a></li>
+                </ul>
+                <p class="text-center">&copy; 2023 James Clabo</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.7.14/dist/vue.min.js" asp-fallback-src="/js/vue-2.7.14.min.js" crossorigin="anonymous"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+    
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#vueAppTemplate',
+            data: {
+                appMessage: 'Hello World'
+                //add more data properties here
+            },
+            methods: {
+                //add methods here
+            }
+        });
+    </script>
+
+</body>
+</html>
